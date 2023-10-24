@@ -1,0 +1,36 @@
+<% include("../layouts/header.ejs") %> 
+
+<h1>Welcome,<%=admin.name  %> </h1>
+
+<a href="/admin/dashboard">Dashboard</a>
+
+<table width="25%">
+    <tr>
+     <td><img src="/userImages/<%=admin.image%>" alt="<%=admin.image%> " width="100px"></td>
+    </tr>
+    <tr>
+     <td>Email</td>
+     <td><%=admin.email%> </td>
+    </tr>
+    <tr>
+     <td>Mobile</td>
+     <td><%=admin.mobile%> </td>
+    </tr>
+    <tr>
+     <% if(admin.is_varified===1){
+         %>
+         <td>Verified</td>
+      <%
+      }
+      else{
+        %>
+        <td>Not verified</td> 
+        <%
+       }
+      %> 
+    </tr>
+ </table>
+
+<a href="/admin/logout">logout</a>
+    
+<% include("../layouts/footer.ejs") %> 
